@@ -1,0 +1,24 @@
+gitSave CCPN Analysis Macro
+
+Files: Get the macro here, or the most recent development version from github. 
+
+This page describes a new method to link git (a versioning control system) to the Project save procedures in Analysis. Currently this code is very simple, and very beta! Use at your own peril!
+
+The concept behind this code relies on version tracking. If you wish to revert to a previous saved state (say from before you added those terrible assignments) you can easily switch back to that state using git!
+Description:
+
+You open a Analysis project (old or new)
+You load this git script as a macro ( called initGitRepoSave at the mo')
+Click 'Run Macro' to initialise the git callbacks
+The next time you save your project, you also get
+A new .git repo in the root of the project - so, for 'thisProject' at 'path/thisProject' you get 'path/thisProject/.git' (as long as there is not git repo there already - if there is, it will check in to that repo)
+A 'git commit -a' - i.e. git commits ALL changes made to the project files (which have just been saved)
+A popup window will ask you for a message to accompany the commit, leaving this blank uses a default message. 
+
+If you want to revert to any previous revision, you have to use your own git kudos at the command line! This is possibly an area where we could add some more 'features'. Help with thinking up a smart GUI for this, or some intelligent automatic behaviour is most welcome. 
+
+Anyway, if you'd like to have a go email me (djo35) or have a  go yourself. 
+
+You'll need the GitPython module
+
+http://gitorious.org/git-python
